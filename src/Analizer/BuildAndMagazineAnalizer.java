@@ -28,11 +28,36 @@ public class BuildAndMagazineAnalizer {
 
     private boolean isMagazineHasBuildElements(Element buildElement, List<Element> magazineElement) {
         for (Element element : magazineElement) {
-            if (element.getClass().equals(buildElement.getClass()) && element.getElementType() == buildElement.getElementType() && element.getColor() == buildElement.getColor()) {
+            if (isClassOfBuiltElementSameAsMagazineElement(buildElement,magazineElement) && isColorOfBuiltElementSameAsMagazineElement(buildElement,magazineElement) && isTypeOfBuiltElementSameAsMagazineElement(buildElement,magazineElement) ) {
                 return true;
             }
         }
         return false;
+    }
 
+
+    private boolean isClassOfBuiltElementSameAsMagazineElement(Element buildElement, List<Element> magazineElement) {
+        for (Element element : magazineElement) {
+            if (element.getClass().equals(buildElement.getClass()) ) {
+                return true;
+            }
+        }
+        return false;
+    }
+    private boolean isTypeOfBuiltElementSameAsMagazineElement(Element buildElement, List<Element> magazineElement) {
+        for (Element element : magazineElement) {
+            if (element.getElementType() == buildElement.getElementType()) {
+                return true;
+            }
+        }
+        return false;
+    }
+    private boolean isColorOfBuiltElementSameAsMagazineElement(Element buildElement, List<Element> magazineElement) {
+        for (Element element : magazineElement) {
+            if (element.getColor().equals(buildElement.getColor())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

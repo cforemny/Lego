@@ -15,10 +15,10 @@ public class mainLego {
         Build build0 = buildList.getBuildList().get(0);
         Build build1 = buildList.getBuildList().get(1);
 
-        BuildList.showBuilds();
-        System.out.println();
-        Magazine.showMagazineList();
-        System.out.println();
+      // BuildList.showBuilds();
+      // System.out.println();
+      // Magazine.showMagazineList();
+      // System.out.println();
 
         BuildAndMagazineAnalizer buildAndMagazineAnalizer = new BuildAndMagazineAnalizer();
         System.out.println("Sprawdzamy czesci 1 konstrukcji: " + build0.getName());
