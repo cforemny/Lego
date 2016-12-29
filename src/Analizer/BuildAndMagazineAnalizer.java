@@ -13,11 +13,12 @@ public class BuildAndMagazineAnalizer {
 
     public BuildAndMagazineAnalizer() {
     }
+    List<Element> magazineElement = MagazineCreator.createMagazineList();
 
     public void checkLists(Build build) {
 
         for (Element element : build.getElement()) {
-            if (isMagazineHasBuildElements(element, MagazineCreator.createMagazineList())) {
+            if (ElementsAnalizer.isMagazineHasBuildElements(element, magazineElement)) {
                 System.out.println("Jest w magazynie: " + element.getElementType() + " " + element.getColor());
             } else {
                 System.out.println("Nie ma w magazynie: " + element.getElementType() + " " + element.getColor());
@@ -26,16 +27,7 @@ public class BuildAndMagazineAnalizer {
 
     }
 
-    private boolean isMagazineHasBuildElements(Element buildElement, List<Element> magazineElement) {
-        for (Element element : magazineElement) {
-            if (ClassAnalizer.isClassOfBuiltElementSameAsMagazineElement(buildElement,magazineElement) &&
-                    ColorAnalizer.isColorOfBuiltElementSameAsMagazineElement(buildElement,magazineElement) &&
-                        TypeAnalizer.isTypeOfBuiltElementSameAsMagazineElement(buildElement,magazineElement))  {
-                return true;
-            }
-        }
-        return false;
-    }
+
 
 
 

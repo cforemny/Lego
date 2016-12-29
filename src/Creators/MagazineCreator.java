@@ -12,6 +12,9 @@ public class MagazineCreator {
 
     private List<Element> elementList;
 
+    public MagazineCreator() {
+    }
+
     public static List<Element> createMagazineList(){
 
         ArrayList<Element> magzineList = new ArrayList<>();
