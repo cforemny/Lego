@@ -28,7 +28,9 @@ public class BuildAndMagazineAnalizer {
 
     private boolean isMagazineHasBuildElements(Element buildElement, List<Element> magazineElement) {
         for (Element element : magazineElement) {
-            if (isClassOfBuiltElementSameAsMagazineElement(buildElement,magazineElement) && isColorOfBuiltElementSameAsMagazineElement(buildElement,magazineElement) && isTypeOfBuiltElementSameAsMagazineElement(buildElement,magazineElement) ) {
+            if (ClassAnalizer.isClassOfBuiltElementSameAsMagazineElement(buildElement,magazineElement) &&
+                    ColorAnalizer.isColorOfBuiltElementSameAsMagazineElement(buildElement,magazineElement) &&
+                        TypeAnalizer.isTypeOfBuiltElementSameAsMagazineElement(buildElement,magazineElement))  {
                 return true;
             }
         }
@@ -36,28 +38,7 @@ public class BuildAndMagazineAnalizer {
     }
 
 
-    private boolean isClassOfBuiltElementSameAsMagazineElement(Element buildElement, List<Element> magazineElement) {
-        for (Element element : magazineElement) {
-            if (element.getClass().equals(buildElement.getClass()) ) {
-                return true;
-            }
-        }
-        return false;
-    }
-    private boolean isTypeOfBuiltElementSameAsMagazineElement(Element buildElement, List<Element> magazineElement) {
-        for (Element element : magazineElement) {
-            if (element.getElementType() == buildElement.getElementType()) {
-                return true;
-            }
-        }
-        return false;
-    }
-    private boolean isColorOfBuiltElementSameAsMagazineElement(Element buildElement, List<Element> magazineElement) {
-        for (Element element : magazineElement) {
-            if (element.getColor().equals(buildElement.getColor())) {
-                return true;
-            }
-        }
-        return false;
-    }
+
+
+
 }

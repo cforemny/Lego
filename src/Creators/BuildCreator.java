@@ -48,10 +48,12 @@ public class BuildCreator {
         Serwo serwo0 = new Serwo(ElementType.SERVOMOTOR, "White");
         Brick brick1 = new Brick(ElementType.CABLE, "green");
         Pin pin0 = new Pin(ElementType.PIN, "brown");
+        Label label1 = new Label(ElementType.LABEL,"yellow");
 
         buildList.add(serwo0);
         buildList.add(brick1);
         buildList.add(pin0);
+        buildList.add(label1);
 
         return buildList;
 
